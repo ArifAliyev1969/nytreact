@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongoose": "^5.2.18",
+    "morgan": "^1.9.0",
+    "npm": "^6.4.1",
+    "request": "^2.88.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "express",
+  "description": "## About This Boilerplate",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArifAliyev1969/nytreact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArifAliyev1969/nytreact/issues"
+  },
+  "homepage": "https://github.com/ArifAliyev1969/nytreact#readme"
+}
