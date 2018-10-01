@@ -4,6 +4,7 @@ const logger = require("morgan"); // REST Logger
 const mongoose = require("mongoose"); // MongoDB ORM
 const routes = require("./routes");
 let db = require("./models"); // Require all models
+const path = require("path");
 
 let PORT = process.env.PORT || 8080;
 let mongooseConnection = mongoose.connection;
@@ -27,6 +28,7 @@ mongooseConnection.once("open", function() {
   console.log(`Sucessfully Connected to Mongo DB !`); // If Connection is successful, Console.log(Message)
 });
 
+app.use(express.static(path.join(__dirname, "client/build")));
 var cors = require("cors");
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -45,6 +47,10 @@ app.post("/saveArticle", function(req, res) {
 });
 
 app.use(routes); // Add routes, both API and View
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
